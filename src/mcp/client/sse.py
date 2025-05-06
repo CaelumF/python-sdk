@@ -124,6 +124,7 @@ async def sse_client(
                                             mode="json",
                                             exclude_none=True,
                                         ),
+                                        timeout=httpx.Timeout(timeout),
                                     )
                                     response.raise_for_status()
                                     logger.debug(
